@@ -12,11 +12,16 @@ public class GoL_main {
 		System.out.println("~ Board created");
 		GUI f = new GUI(board.getBoard());
 		System.out.println("~ Initializing board");
-		//Rule r = new Rule(board.getBoard());
+		Rule r = new Rule(board.getBoard());
 		
 		
 		f.initalizeBoard();
 		f.updateBoard();
+		
+		while (true) {
+			r.ImplementRule();
+			f.updateBoard();
+		}
 		
 //		while() {
 //			try {
