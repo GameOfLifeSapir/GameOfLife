@@ -67,7 +67,7 @@ public class GoL_Board
 		
 	}
 
-	private int[][] getBoard() {
+	public int[][] getBoard() {
 		return board;
 	}
 
