@@ -67,22 +67,26 @@ class GUI extends JFrame {
 		final int ROWS = row;
 		final int COLS = col;
 		
-		// Draws the orignal grid.
+		// Draws the original grid.
 		gridPanel.setLayout(new GridLayout(row, col));
-        JLabel[][] grid= new JLabel[row][col];
+        JLabel[][] grid = new JLabel[row][col];
         for (int i = 0; i < row; i++){
             for (int j = 0; j < col; j++){
                 grid[i][j] = new JLabel();
-                grid[i][j].setBorder(new LineBorder(Color.BLACK));
+                //grid[i][j].setBorder(new LineBorder(Color.BLACK));
                 //grid[i][j].setBackground(Color.black);
                 grid[i][j].setOpaque(true);
                 gridPanel.add(grid[i][j]);
             }
         }
         
+        gridPanel.revalidate();
+        
         System.out.println("~ Initial grid created");
         
         f.add(gridPanel);
+        
+        System.out.println("~ Panel added to frame");
         gridPanel_nextFrame = gridPanel;
         f.show();
         
@@ -92,7 +96,7 @@ class GUI extends JFrame {
         for(int i = 0; i < ROWS; i++) {
         	for(int j = 0; j < COLS; j++) {
         		if(board[i][j] == 1) {
-        			frame_grid[i][j].setBackground(Color.RED);
+        			frame_grid[i][j].setBackground(Color.BLACK);
         		}
         	}
         }
