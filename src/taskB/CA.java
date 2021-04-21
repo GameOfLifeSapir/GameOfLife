@@ -4,7 +4,7 @@ package taskB;
  * 
  * @author
  * Abstract class for cellular automata (CAs)
- *
+ *test
  */
 public abstract class CA implements Iterable
 {
