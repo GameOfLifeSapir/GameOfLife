@@ -16,10 +16,15 @@ public class GoL_Board extends CA
 	 * @param cols: Number of columns
 	 * Init new GoL automaton with an empty board
 	 */
+	
+	private int[][] board = null;
+	
 	public GoL_Board(int rows, int cols)
 	{
 		// TODO Auto-generated constructor stub
-		//initial check
+		board = new int [rows][cols];
+		//test
+		
 	}
 
 	@Override
