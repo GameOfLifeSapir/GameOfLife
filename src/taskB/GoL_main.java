@@ -6,15 +6,23 @@ public class GoL_main {
 
 	public static void main(String[] args) {
 		System.out.println("~ Starting project");
-		File gliderGun = new File("/Users/gnyhlmprt/Google Drive/Coding/GoL/GameOfLife/src/taskB/GliderGunBig.txt");
+		File gliderGun = new File("C:\\Users\\pioni\\OneDrive\\Documents\\GitHub\\GameOfLife\\src\\taskB\\GliderGunBig.txt");
 		System.out.println("~ Input file loaded");
 		GoL_Board board = new GoL_Board(gliderGun);
 		System.out.println("~ Board created");
 		GUI f = new GUI(board.getBoard());
-		
 		System.out.println("~ Initializing board");
+		Rule r = new Rule(board.getBoard());
+		
+		
 		f.initalizeBoard();
+		
+		while(true) {
+			r.ImplementRule();
+			f.updateBoard();
+		}
+		
 
-	}
+	} 
 
 }
