@@ -1,4 +1,5 @@
-package Rules;
+package taskB;
+
 public class Rule implements CA_Rule {
 	int[][] board;
 	int[][] oldboard;
@@ -33,6 +34,7 @@ public class Rule implements CA_Rule {
 		}
 		return board;
 	}
+	
 	public int Rule_1(int col,int row) {
 		if(board[col][row] == 1) {
 			int alive_neighbors = check_neighbors(col,row);
@@ -134,7 +136,7 @@ public class Rule implements CA_Rule {
 				}
 			}
 		}
-		if(row == 0) {
+		else if(row == 0) {
 			if(col == board.length) {
 				if(board[col-1][row] == 1) {
 					alive_neighbors++;

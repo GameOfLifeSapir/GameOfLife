@@ -1,5 +1,11 @@
 package taskB;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -8,7 +14,7 @@ import java.util.Iterator;
  * This class implements a Game of life board
  * 
  */
-public class GoL_Board extends CA
+public class GoL_Board
 {
 	/**
 	 * 
@@ -16,9 +22,53 @@ public class GoL_Board extends CA
 	 * @param cols: Number of columns
 	 * Init new GoL automaton with an empty board
 	 */
-	public GoL_Board(int rows, int cols)
+	
+	private int[][] board = null;
+	
+	public GoL_Board(File initialBoard)
 	{
-		// TODO Auto-generated constructor stub
+		//reading the text file
+		String rowS,colS;
+		int row,col;
+		String text = null;
+		BufferedReader initialBoardText = null;
+		try {
+			initialBoardText = new BufferedReader(new FileReader(initialBoard));
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		}
+		try {
+			text = initialBoardText .readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		String[] strArray = text.split(" ");
+		rowS = strArray[0];
+		colS = strArray[1];
+		row = Integer.parseInt(rowS);
+		col = Integer.parseInt(colS);
+		this.board = new int [row][col];
+		
+		try {
+			int i = 0;
+			while ((text = initialBoardText.readLine()) != null) {
+			    for (int j = 0; j < text.length(); j++) {
+			    	if(text.charAt(j) == '*') board[i][j] = 1;	
+				}
+			    i++;
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+		
+		
+	}
+
+	public int[][] getBoard() {
+		return board;
 	}
 
 	@Override
@@ -35,7 +85,11 @@ public class GoL_Board extends CA
 	 */
 	public void SetBoard(int[][] board)
 	{
-		// TODO Auto-generated method stub
+		for (int i = 0; i < board.length; i++) {
+			for (int j = 0; j < board.length; j++) {
+				this.board[i][j] = board[i][j];
+			}
+		}
 	}
 
 	/**
