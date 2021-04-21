@@ -2,7 +2,7 @@ package taskB;
 
 /**
  * 
- * @author 
+ * @author dan kourkovsky 
  * Interface for
  */
 public interface CA_Rule
