@@ -24,6 +24,7 @@ public class GoL_Board extends CA
 		// TODO Auto-generated constructor stub
 		board = new int [rows][cols];
 		//test
+		//dor nKah
 		
 	}
 
