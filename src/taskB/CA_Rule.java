@@ -1,11 +1,11 @@
-package taskB;
+package Rules;
 
 /**
  * 
- * @author dan kourkovsky 
+ * @author 
  * Interface for
  */
 public interface CA_Rule
 {
-	abstract public void ImplementRule();
+	abstract public int[][] ImplementRule();
 }
