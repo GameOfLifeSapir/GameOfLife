@@ -1,7 +1,7 @@
 package taskB;
 
 /**
- * 
+ * jdskdasj
  * @author
  * Abstract class for cellular automata (CAs)
  *
