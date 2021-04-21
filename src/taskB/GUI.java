@@ -69,9 +69,14 @@ class GUI extends JFrame {
         
         for(int i = 0; i < LENGTH; i++) {
         	grid[i][i].setBackground(Color.red);
-        	f.remove(gridPanel);
-            f.add(gridPanel);
-            f.show();
+        	
+        	gridPanel.revalidate();
+        	gridPanel.repaint();
+        	
+//        	
+//        	f.remove(gridPanel);
+//            f.add(gridPanel);
+//            f.show();
         }
         
         
