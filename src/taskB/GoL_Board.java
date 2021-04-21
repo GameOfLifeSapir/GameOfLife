@@ -2,6 +2,7 @@ package taskB;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
@@ -30,12 +31,15 @@ public class GoL_Board extends CA
 		String rowS,colS;
 		int row,col;
 		String text = null;
-		String MatrixValue[] = new String[2];
-		BufferedReader initialBoardText = new BufferedReader(new FileReader(initialBoard));
+		BufferedReader initialBoardText = null;
+		try {
+			initialBoardText = new BufferedReader(new FileReader(initialBoard));
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		}
 		try {
 			text = initialBoardText .readLine();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		String[] strArray = text.split(" ");
@@ -43,8 +47,18 @@ public class GoL_Board extends CA
 		colS = strArray[1];
 		row = Integer.parseInt(rowS);
 		col = Integer.parseInt(colS);
+		this.board = new int [row][col];
+		
+		try {
+			while ((text = initialBoardText.readLine()) != null) {
+			    System.out.println(text);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-		board = new int [row][col];
+
 		
 		
 	}
