@@ -19,6 +19,7 @@ public class GoL_Board extends CA
 	public GoL_Board(int rows, int cols)
 	{
 		// TODO Auto-generated constructor stub
+		//initial check
 	}
 
 	@Override
