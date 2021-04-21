@@ -14,7 +14,7 @@ import java.util.Iterator;
  * This class implements a Game of life board
  * 
  */
-public class GoL_Board extends CA
+public class GoL_Board
 {
 	/**
 	 * 
@@ -50,17 +50,25 @@ public class GoL_Board extends CA
 		this.board = new int [row][col];
 		
 		try {
+			int i = 0;
 			while ((text = initialBoardText.readLine()) != null) {
-			    System.out.println(text);
+			    for (int j = 0; j < text.length(); j++) {
+			    	if(text.charAt(j) == '*') board[i][j] = 1;	
+				}
+			    i++;
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		
 
 		
 		
+	}
+
+	private int[][] getBoard() {
+		return board;
 	}
 
 	@Override
@@ -77,7 +85,11 @@ public class GoL_Board extends CA
 	 */
 	public void SetBoard(int[][] board)
 	{
-		// TODO Auto-generated method stub
+		for (int i = 0; i < board.length; i++) {
+			for (int j = 0; j < board.length; j++) {
+				this.board[i][j] = board[i][j];
+			}
+		}
 	}
 
 	/**
