@@ -1,13 +1,23 @@
 package Rules;
-
 public class Rule implements CA_Rule {
 	int[][] board;
+	int[][] oldboard;
 
 	Rule(int[][] board) {
-		this.board = board;
+		this.board = oldboard;
+		createBoard(this.board);
 		ImplementRule();
 	}
-
+	public void createBoard(int[][] board){
+		int col = board.length;
+		int row = board[col].length;
+		newboard = int[col + 2][row + 2];
+		for(int i = 1; i < board.length; i++) {
+			for(int j = 1; j < board[i].length; j++) {
+				newboard[i][j] = board[i - 1][j - 1];
+			}
+		}
+	}
 	public int[][] ImplementRule(){
 		int result;
 		for(int col = 0; col< board.length; col++) {
