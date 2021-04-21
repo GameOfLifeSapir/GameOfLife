@@ -1,5 +1,10 @@
 package taskB;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Iterator;
 
 /**
@@ -19,12 +24,28 @@ public class GoL_Board extends CA
 	
 	private int[][] board = null;
 	
-	public GoL_Board(int rows, int cols)
+	public GoL_Board(File initialBoard)
 	{
-		// TODO Auto-generated constructor stub
-		board = new int [rows][cols];
-		//test
-		//dor nKah
+		//reading the text file
+		String rowS,colS;
+		int row,col;
+		String text = null;
+		String MatrixValue[] = new String[2];
+		BufferedReader initialBoardText = new BufferedReader(new FileReader(initialBoard));
+		try {
+			text = initialBoardText .readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String[] strArray = text.split(" ");
+		rowS = strArray[0];
+		colS = strArray[1];
+		row = Integer.parseInt(rowS);
+		col = Integer.parseInt(colS);
+
+		board = new int [row][col];
+		
 		
 	}
 
