@@ -1,4 +1,4 @@
-package Rules;
+package taskB;
 
 /**
  * 
@@ -7,5 +7,5 @@ package Rules;
  */
 public interface CA_Rule
 {
-	abstract public int[][] ImplementRule();
+	abstract public void ImplementRule();
 }
